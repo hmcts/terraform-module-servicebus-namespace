@@ -1,10 +1,16 @@
-resource "azurerm_servicebus_namespace" "namespace" {
-  name                = "${var.name}"
-  location            = "${var.location}"
-  resource_group_name = "${var.resource_group_name}"
-  sku                 = "standard"
+# ARM template for Service Bus namespace
+data "template_file" "namespace_template" {
+  template = "${file("${path.module}/template/namespace_template.json")}"
+}
 
-  tags {
-    source = "terraform"
+# Create Azure Service Bus namespace
+resource "azurerm_template_deployment" "namespace" {
+  template_body       = "${data.template_file.namespace_template.rendered}"
+  name                = "${var.name}"
+  deployment_mode     = "Incremental"
+  resource_group_name = "${var.resource_group_name}"
+
+  parameters = {
+    serviceBusNamespaceName = "${var.name}"
   }
 }
