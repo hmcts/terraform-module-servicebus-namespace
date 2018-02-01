@@ -47,19 +47,19 @@
     }
   ],
   "outputs": {
-    "primaryConnectionStringForSendAndListen": {
+    "primarySendAndListenConnectionString": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).primaryConnectionString]"
     },
-    "secondaryConnectionStringForSendAndListen": {
+    "secondarySendAndListenConnectionString": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).secondaryConnectionString]"
     },
-    "primarySharedAccessKeyForSendAndListen": {
+    "primarySendAndListenSharedAccessKey": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).primaryKey]"
     },
-    "secondarySharedAccessKeyForSendAndListen": {
+    "secondarySendAndListenSharedAccessKey": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).secondaryKey]"
     }
