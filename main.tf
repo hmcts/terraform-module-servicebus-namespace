@@ -12,5 +12,6 @@ resource "azurerm_template_deployment" "namespace" {
 
   parameters = {
     serviceBusNamespaceName = "${var.name}"
+    location                = "${var.location}"
   }
 }
