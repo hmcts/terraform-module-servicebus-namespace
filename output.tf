@@ -1,3 +1,7 @@
+output "name" {
+  value = "${azurerm_template_deployment.namespace.name}"
+}
+
 # primary connection string for send and listen operations
 output "primary_send_and_listen_connection_string" {
   value = "${azurerm_template_deployment.namespace.outputs["primarySendAndListenConnectionString"]}"
