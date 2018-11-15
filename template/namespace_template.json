@@ -28,6 +28,11 @@
       "location": "[parameters('location')]",
       "sku": {
         "name": "Standard"
+      },
+      "tags": {
+        "displayName": "Service Bus Namespace",
+        "environment": "[parameters('env')]",
+        "Team Name": "[parameters('teamName')]"
       }
     },
     {
