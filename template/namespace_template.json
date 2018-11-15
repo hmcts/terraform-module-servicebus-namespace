@@ -20,13 +20,13 @@
         "description": "Custom display name"
       }
     },
-    "environment": {
+    "env": {
       "type": "string",
       "metadata": {
         "description": "Target environment"
       }
     },
-    "Team Name": {
+    "teamName": {
       "type": "string",
       "metadata": {
         "description": "Development team name"
