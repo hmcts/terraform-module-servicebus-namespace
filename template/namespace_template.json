@@ -14,12 +14,6 @@
         "description": "Location of the Azure data centre to deploy to"
       }
     },
-    "displayName": {
-      "type": "string",
-      "metadata": {
-        "description": "Custom display name"
-      }
-    },
     "env": {
       "type": "string",
       "metadata": {
