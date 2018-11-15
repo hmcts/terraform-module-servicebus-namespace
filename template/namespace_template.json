@@ -13,8 +13,26 @@
       "metadata": {
         "description": "Location of the Azure data centre to deploy to"
       }
+    },
+    "displayName": {
+      "type": "string",
+      "metadata": {
+        "description": "Custom display name"
+      }
+    },
+    "environment": {
+      "type": "string",
+      "metadata": {
+        "description": "Target environment"
+      }
+    },
+    "Team Name": {
+      "type": "string",
+      "metadata": {
+        "description": "Development team name"
+      }
     }
-  },
+},
   "variables": {
     "fullRightsKeyName": "SendAndListenSharedAccessKey",
     "sendAndListenAuthRuleResourceId": "[resourceId('Microsoft.ServiceBus/namespaces/authorizationRules', parameters('serviceBusNamespaceName'), variables('fullRightsKeyName'))]",
