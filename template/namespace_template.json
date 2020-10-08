@@ -39,7 +39,7 @@
       "type": "Microsoft.ServiceBus/Namespaces",
       "location": "[parameters('location')]",
       "sku": {
-        "name": "Standard"
+        "name": "Premium"
       },
       "tags": {
         "displayName": "Service Bus Namespace",
