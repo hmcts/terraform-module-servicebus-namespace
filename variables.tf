@@ -24,4 +24,5 @@ variable "common_tags" {
 variable "sku" {
   type = "string"
   default = "Standard"
+  description = "SKU type(Basic, Standard and Premium)"
 }
