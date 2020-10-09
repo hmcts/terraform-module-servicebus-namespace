@@ -20,3 +20,9 @@ variable "env" {
 variable "common_tags" {
   type = "map"
 }
+
+variable "sku" {
+  type = "string"
+  default = "Standard"
+  }
+
