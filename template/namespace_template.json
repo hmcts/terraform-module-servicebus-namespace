@@ -85,6 +85,10 @@
     "secondarySendAndListenSharedAccessKey": {
       "type": "string",
       "value": "[listkeys(variables('sendAndListenAuthRuleResourceId'), variables('sbVersion')).secondaryKey]"
+    },
+    "sku": {
+      "type": "string",
+      "value": "[parameters('sku')]"
     }
   }
 }
