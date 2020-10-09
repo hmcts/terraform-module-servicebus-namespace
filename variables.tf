@@ -24,5 +24,4 @@ variable "common_tags" {
 variable "sku" {
   type = "string"
   default = "Standard"
-  }
-
+}
