@@ -25,6 +25,12 @@
       "metadata": {
         "description": "Development team name"
       }
+    },
+    "sku": {
+      "type": "string",
+      "metadata": {
+        "description": "SKU type"
+      }
     }
 },
   "variables": {
@@ -39,7 +45,7 @@
       "type": "Microsoft.ServiceBus/Namespaces",
       "location": "[parameters('location')]",
       "sku": {
-        "name": "Standard"
+        "name": "[parameters('sku')]"
       },
       "tags": {
         "displayName": "Service Bus Namespace",

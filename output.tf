@@ -21,3 +21,9 @@ output "primary_send_and_listen_shared_access_key" {
 output "secondary_send_and_listen_shared_access_key" {
   value = "${azurerm_template_deployment.namespace.outputs["secondarySendAndListenSharedAccessKey"]}"
 }
+
+# sku type
+output "sku" {
+  value = "${azurerm_template_deployment.namespace.outputs["sku"]}"
+}
+
