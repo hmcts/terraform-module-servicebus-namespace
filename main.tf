@@ -13,7 +13,7 @@ resource "azurerm_template_deployment" "namespace" {
   parameters = {
     serviceBusNamespaceName = "${var.name}"
     location                = "${var.location}"
-    teamName                = "${lookup(var.common_tags, "Team Name")}"
+    teamName                = "${lookup(var.common_tags, "managedBy")}"
     env                     = "${var.env}"
     sku                     = "${var.sku}"
   }
