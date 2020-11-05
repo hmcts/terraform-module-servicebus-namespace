@@ -53,6 +53,9 @@
       "sku": {
         "name": "[parameters('sku')]"
       },
+      "properties": {
+        "zoneRedundant": "[parameters('zoneRedundant')]"
+      },
       "tags": {
         "displayName": "Service Bus Namespace",
         "environment": "[parameters('env')]",
@@ -95,6 +98,10 @@
     "sku": {
       "type": "string",
       "value": "[parameters('sku')]"
+    },
+    "zoneRedundant": {
+      "type": "bool",
+      "value": "[parameters('zoneRedundant')]"
     }
   }
 }
