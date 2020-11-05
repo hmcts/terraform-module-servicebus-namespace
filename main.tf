@@ -16,5 +16,6 @@ resource "azurerm_template_deployment" "namespace" {
     teamName                = "${lookup(var.common_tags, "managedBy")}"
     env                     = "${var.env}"
     sku                     = "${var.sku}"
+    zoneRedundant           = "${var.zoneRedundant}"
   }
 }
