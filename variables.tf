@@ -26,3 +26,9 @@ variable "sku" {
   default = "Standard"
   description = "SKU type(Basic, Standard and Premium)"
 }
+
+variable "zoneRedundant" {
+  type = bool
+  default = false
+  description = "zoneRedundant (True or False)"
+}

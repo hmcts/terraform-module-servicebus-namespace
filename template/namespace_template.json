@@ -31,6 +31,12 @@
       "metadata": {
         "description": "SKU type"
       }
+    },
+    "zoneRedundant": {
+      "type": "bool",
+      "metadata": {
+        "description": "zoneRedundant"
+      }
     }
 },
   "variables": {
@@ -46,6 +52,9 @@
       "location": "[parameters('location')]",
       "sku": {
         "name": "[parameters('sku')]"
+      },
+      "properties": {
+        "zoneRedundant": "[parameters('zoneRedundant')]"
       },
       "tags": {
         "displayName": "Service Bus Namespace",
@@ -89,6 +98,10 @@
     "sku": {
       "type": "string",
       "value": "[parameters('sku')]"
+    },
+    "zoneRedundant": {
+      "type": "bool",
+      "value": "[parameters('zoneRedundant')]"
     }
   }
 }
