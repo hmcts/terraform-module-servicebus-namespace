@@ -27,3 +27,8 @@ output "sku" {
   value = "${var.sku}"
 }
 
+# zoneRedundant
+output "zoneRedundant" {
+  value = "${var.zoneRedundant}"
+}
+
