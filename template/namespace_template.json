@@ -33,7 +33,7 @@
       }
     },
     "zoneRedundant": {
-      "type": "bool",
+      "type": "string",
       "metadata": {
         "description": "zoneRedundant"
       }
@@ -100,7 +100,7 @@
       "value": "[parameters('sku')]"
     },
     "zoneRedundant": {
-      "type": "bool",
+      "type": "string",
       "value": "[parameters('zoneRedundant')]"
     }
   }
