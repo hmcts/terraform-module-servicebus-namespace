@@ -51,7 +51,8 @@
       "type": "Microsoft.ServiceBus/Namespaces",
       "location": "[parameters('location')]",
       "sku": {
-        "name": "[parameters('sku')]"
+        "name": "[parameters('sku')]",
+        "tier": "[parameters('sku')]"
       },
       "properties": {
         "zoneRedundant": "[parameters('zoneRedundant')]"
