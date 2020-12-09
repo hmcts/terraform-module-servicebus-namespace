@@ -1,21 +1,29 @@
-# ARM template for Service Bus namespace
-data "template_file" "namespace_template" {
-  template = "${file("${path.module}/template/namespace_template.json")}"
+local {
+  local_tags = {
+    "displayName" = "Service Bus Namespace"
+    "environment" = var.env
+    "Team Name"   = lookup(var.common_tags, "managedBy")
+  }
+
+  tags = merge(local.local_tags, var.common_tags)
+
+  auth_rule_name = "SendAndListenSharedAccessKey"
 }
 
-# Create Azure Service Bus namespace
-resource "azurerm_template_deployment" "namespace" {
-  template_body       = "${data.template_file.namespace_template.rendered}"
-  name                = "${var.name}"
-  deployment_mode     = "Incremental"
-  resource_group_name = "${var.resource_group_name}"
+resource "azurerm_servicebus_namespace" "servicebus_namespace" {
+  name                = var.name
+  location            = var.location
+  resource_group_name = var.resource_group_name
+  sku                 = var.sku
+  zone_redundant      = var.zone_redundant
+  tags                = local.tags
+}
 
-  parameters = {
-    serviceBusNamespaceName = "${var.name}"
-    location                = "${var.location}"
-    teamName                = "${lookup(var.common_tags, "managedBy")}"
-    env                     = "${var.env}"
-    sku                     = "${var.sku}"
-    zoneRedundant           = var.zoneRedundant
-  }
+resource "azurerm_servicebus_namespace_authorization_rule" "servicebus_authorization_rule" {
+  name                = local.auth_rule_name
+  namespace_name      = azurerm_servicebus_namespace.servicebus_namespace.name
+  resource_group_name = var.resource_group_name
+
+  listen = true
+  send   = true
 }
