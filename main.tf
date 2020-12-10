@@ -1,4 +1,4 @@
-local {
+locals {
   local_tags = {
     "displayName" = "Service Bus Namespace"
     "environment" = var.env
