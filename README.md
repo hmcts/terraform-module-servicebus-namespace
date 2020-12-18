@@ -1,7 +1,7 @@
 # terraform-module-servicebus-namespace
 
 A Terraform module for creating an Azure Service Bus namespace.
-Refer to the following links for a detailed explanation of the Azure Service Bus namespace.
+Refer to the following link for a detailed explanation of the Azure Service Bus namespace.
 
 [Azure Service Bus Namespace](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) <br />
 
@@ -41,6 +41,7 @@ The following parameters are optional
 
 The following variables are provided by the module for use in other modules
 
+- `name` the name of the service bus namespace.
 - `primary_send_and_listen_connection_string` the Primary Connection String for the ServiceBus Namespace authorization Rule.
 - `secondary_send_and_listen_connection_string` the Secondary Connection String for the ServiceBus Namespace authorization Rule.
 - `primary_send_and_listen_shared_access_key` the Primary Key for the ServiceBus Namespace authorization Rule.
