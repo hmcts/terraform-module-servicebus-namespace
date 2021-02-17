@@ -19,7 +19,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   tags                = local.tags
 }
 
-resource "azurerm_servicebus_namespace_authorization_rule" "servicebus_authorization_rule" {
+resource "azurerm_servicebus_namespace_authorization_rule" "send_listen_auth_rule" {
   name                = local.auth_rule_name
   namespace_name      = azurerm_servicebus_namespace.servicebus_namespace.name
   resource_group_name = var.resource_group_name
