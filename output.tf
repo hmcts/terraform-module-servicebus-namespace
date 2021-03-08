@@ -28,6 +28,6 @@ output "sku" {
 }
 
 # zone redundant
-output "zone_redundant" {
-  value = var.zone_redundant
+output "zoneRedundant" {
+  value = var.zoneRedundant
 }

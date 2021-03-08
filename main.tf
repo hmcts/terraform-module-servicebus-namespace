@@ -1,6 +1,4 @@
 locals {
-
-
   auth_rule_name = "SendAndListenSharedAccessKey"
 }
 

@@ -27,7 +27,8 @@ variable "sku" {
   description = "SKU type (Basic, Standard and Premium)"
 }
 
-variable "zone_redundant" {
+variable "zoneRedundant
+" {
   type        = bool
   default     = false
   description = "Whether or not this resource is zone redundant (true or false)"
