@@ -1,6 +1,5 @@
 locals {
 
-  tags = merge(local.local_tags, var.common_tags)
 
   auth_rule_name = "SendAndListenSharedAccessKey"
 }
