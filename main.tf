@@ -10,7 +10,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   resource_group_name = var.resource_group_name
   sku                 = var.sku
   zone_redundant      = var.zone_redundant
-  tags                = local.tags
+  tags                = var.common_tags
 }
 
 resource "azurerm_servicebus_namespace_authorization_rule" "send_listen_auth_rule" {
