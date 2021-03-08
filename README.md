@@ -3,7 +3,7 @@
 A Terraform module for creating an Azure Service Bus namespace.
 Refer to the following link for a detailed explanation of the Azure Service Bus namespace.
 
-[Azure Service Bus Namespace](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview) <br />
+[Azure Service Bus Namespace](https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview)
 
 ## Usage
 
