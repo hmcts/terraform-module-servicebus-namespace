@@ -1,9 +1,4 @@
 locals {
-  local_tags = {
-    "displayName" = "Service Bus Namespace"
-    "environment" = var.env
-    "Team Name"   = lookup(var.common_tags, "managedBy")
-  }
 
   tags = merge(local.local_tags, var.common_tags)
 
