@@ -47,4 +47,3 @@ The following variables are provided by the module for use in other modules
 - `primary_send_and_listen_shared_access_key` the Primary Key for the ServiceBus Namespace authorization Rule.
 - `secondary_send_and_listen_shared_access_key` the Secondary Key for the ServiceBus Namespace authorization Rule.
 - `sku` the sku of the ServiceBus.
-- `zone_redundant` The zone redudancy of the ServiceBus.

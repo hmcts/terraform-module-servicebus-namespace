@@ -26,8 +26,3 @@ output "secondary_send_and_listen_shared_access_key" {
 output "sku" {
   value = var.sku
 }
-
-# zone redundant
-output "zoneRedundant" {
-  value = var.zoneRedundant
-}
