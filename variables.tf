@@ -28,8 +28,8 @@ variable "sku" {
 }
 
 variable "capacity" {
-  type = number
-  default = 0
+  type        = number
+  default     = 0
   description = "Specifies the capacity"
 }
 
