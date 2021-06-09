@@ -27,6 +27,12 @@ variable "sku" {
   description = "SKU type (Basic, Standard and Premium)"
 }
 
+variable "capacity" {
+  type        = number
+  default     = 0
+  description = "Specifies the capacity"
+}
+
 variable "zoneRedundant" {
   type        = bool
   default     = false
