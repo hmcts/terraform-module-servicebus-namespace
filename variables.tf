@@ -46,6 +46,6 @@ variable "enable_public_access" {
 }
 
 variable "subnet_acl" {
-  default     = ""
+  default     = []
   description = "List subnet IDs that need access to service bus namespace (Premium SKU only)"
 }
