@@ -11,7 +11,7 @@ resource "azurerm_private_endpoint" "this" {
   name                = "${var.name}-endpoint"
   location            = var.location
   resource_group_name = var.resource_group_name
-  subnet_id           = azurerm_subnet.servicebus
+  subnet_id           = azurerm_subnet.this
 
   private_service_connection {
     name                           = "${var.name}-endpoint-namespace"
