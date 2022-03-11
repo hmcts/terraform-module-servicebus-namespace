@@ -45,7 +45,7 @@ variable "enable_public_access" {
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
 }
 
-variable "subnet_id" {
+variable "subnet_acl" {
   default     = ""
-  description = "Subnet ID of the subnet to create private endpoint in (Premium SKU only)"
+  description = "List subnet IDs that need access to service bus namespace (Premium SKU only)"
 }

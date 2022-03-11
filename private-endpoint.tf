@@ -1,11 +1,17 @@
-resource "azurerm_private_endpoint" "servicebus" {
+data "azurerm_subnet" "this" {
+  name                 = "core-infra-subnet-0-${var.env}"
+  resource_group_name  = "core-infra-${var.env}"
+  virtual_network_name = "core-infra-vnet-${var.env}"
+}
+
+resource "azurerm_private_endpoint" "this" {
 
   count = var.subnet_id == "" ? 0 : 1
 
   name                = "${var.name}-endpoint"
   location            = var.location
   resource_group_name = var.resource_group_name
-  subnet_id           = var.subnet_id
+  subnet_id           = azurerm_subnet.servicebus
 
   private_service_connection {
     name                           = "${var.name}-endpoint-namespace"

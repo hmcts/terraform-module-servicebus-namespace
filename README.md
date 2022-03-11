@@ -39,7 +39,7 @@ module "servicebus-namespace" {
 | <a name="input_name"></a> [name](#input\_name) | Unique Azure Service Bus namespace | `string` | n/a | yes |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group in which the Service Bus namespace should exist | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | SKU type (Basic, Standard and Premium) | `string` | `"Standard"` | no |
-| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID of the subnet to create private endpoint in (Premium SKU only) | `string` | `""` | no |
+| <a name="input_subnet_acl"></a> [subnet\_acl](#input\_subnet\_acl) | List subnet IDs that need access to service bus namespace (Premium SKU only) | `string` | `""` | no |
 | <a name="input_zoneRedundant"></a> [zoneRedundant](#input\_zoneRedundant) | Whether or not this resource is zone redundant (true or false) | `bool` | `false` | no |
 
 ## Outputs
