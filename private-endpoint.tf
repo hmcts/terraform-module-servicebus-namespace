@@ -25,7 +25,7 @@ resource "azurerm_private_endpoint" "this" {
 resource "azurerm_servicebus_namespace_network_rule_set" "this" {
   count                         = var.subnet_id == [] ? 0 : 1
   namespace_id                  = azurerm_servicebus_namespace.servicebus_namespace.id
-  default_action                = "Deny"
+  default_action                = "Allow"
   public_network_access_enabled = var.enable_public_access
 
 }
