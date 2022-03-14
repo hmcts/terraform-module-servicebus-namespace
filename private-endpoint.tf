@@ -1,6 +1,6 @@
 resource "azurerm_private_endpoint" "this" {
 
-  count = var.subnet_acl == [] ? 0 : 1
+  count = var.subnet_id == [] ? 0 : 1
 
   name                = "${var.name}-endpoint"
   location            = var.location
@@ -23,7 +23,7 @@ resource "azurerm_private_endpoint" "this" {
 }
 
 resource "azurerm_servicebus_namespace_network_rule_set" "this" {
-  count                         = var.subnet_acl == [] ? 0 : 1
+  count                         = var.subnet_id == [] ? 0 : 1
   namespace_id                  = azurerm_servicebus_namespace.servicebus_namespace.id
   default_action                = "Deny"
   public_network_access_enabled = var.enable_public_access
