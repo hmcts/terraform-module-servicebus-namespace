@@ -1,9 +1,3 @@
-data "azurerm_subnet" "this" {
-  name                 = "core-infra-subnet-0-${var.env}"
-  resource_group_name  = "core-infra-${var.env}"
-  virtual_network_name = "core-infra-vnet-${var.env}"
-}
-
 resource "azurerm_private_endpoint" "this" {
 
   count = var.subnet_acl == [] ? 0 : 1

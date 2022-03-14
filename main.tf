@@ -6,7 +6,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   name                = var.name
   location            = var.location
   resource_group_name = var.resource_group_name
-  sku                 = var.subnet_acl != "" ? "Premium" : var.sku
+  sku                 = var.subnet_id != "" ? "Premium" : var.sku
   zone_redundant      = var.zoneRedundant
   tags                = var.common_tags
   capacity            = var.capacity
