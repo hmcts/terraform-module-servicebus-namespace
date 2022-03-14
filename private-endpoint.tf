@@ -34,13 +34,4 @@ resource "azurerm_servicebus_namespace_network_rule_set" "this" {
   default_action                = "Deny"
   public_network_access_enabled = var.enable_public_access
 
-
-  dynamic "network_rules" {
-    for_each = toset(var.subnet_acl)
-    content {
-      subnet_id                            = network_rules.value
-      ignore_missing_vnet_service_endpoint = false
-    }
-  }
-
 }
