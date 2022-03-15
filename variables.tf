@@ -50,11 +50,6 @@ variable "enable_public_access" {
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
 }
 
-variable "subnet_id" {
-  default     = ""
-  description = "Subnet ID that need access to service bus namespace (Premium SKU only)"
-}
-
 variable "enable_private_endpoint" {
   default     = false
   description = "Enable Private endpoint? Only available with the Premium SKU, if set to true a Premium type Service Bus Namespace will be deployed automatically"
