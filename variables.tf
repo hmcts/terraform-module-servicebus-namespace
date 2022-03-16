@@ -5,7 +5,7 @@ variable "location" {
 
 variable "project" {
   default     = ""
-  description = "Project name - sds or cft"
+  description = "Project name (required for Premium SKU) - sds or cft. "
 }
 
 variable "name" {
@@ -35,7 +35,7 @@ variable "sku" {
 variable "capacity" {
   type        = number
   default     = 0
-  description = "Specifies the capacity (value must be >= 1 if using Premium SKU)"
+  description = "Specifies the capacity. Defaults to 1 when using Premium SKU."
 }
 
 variable "zoneRedundant" {
