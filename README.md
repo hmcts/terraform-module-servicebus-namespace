@@ -42,7 +42,6 @@ module "servicebus-namespace" {
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group in which the Service Bus namespace should exist | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | SKU type (Basic, Standard and Premium) | `string` | `"Standard"` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID to attach private endpoint to - overrides the default subnet id | `string` | `""` | no |
-| <a name="input_subnet_id_override"></a> [subnet\_id\_override](#input\_subnet\_id\_override) | n/a | `string` | `""` | no |
 | <a name="input_zoneRedundant"></a> [zoneRedundant](#input\_zoneRedundant) | Whether or not this resource is zone redundant (true or false) | `bool` | `false` | no |
 
 ## Outputs

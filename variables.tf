@@ -59,4 +59,3 @@ variable "subnet_id" {
   default     = ""
   description = "Subnet ID to attach private endpoint to - overrides the default subnet id"
 }
-
