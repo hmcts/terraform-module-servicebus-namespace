@@ -60,7 +60,3 @@ variable "subnet_id" {
   description = "Subnet ID to attach private endpoint to - overrides the default subnet id"
 }
 
-variable "subnet_id_override" {
-  default     = ""
-  description = ""
-}
