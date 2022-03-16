@@ -73,8 +73,6 @@ module "servicebus-namespace" {
 
 <!-- END_TF_DOCS -->
 
-Terraform docs created with: `terraform-docs markdown table --output-file README.md --hide-empty=true --output-mode inject --show providers,inputs,outputs .`
-
 ```
-
+Terraform docs created with: `terraform-docs markdown table --output-file README.md --hide-empty=true --output-mode inject --show providers,inputs,outputs .`
 ```
