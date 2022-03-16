@@ -7,19 +7,6 @@ Refer to the following link for a detailed explanation of the Azure Service Bus 
 
 ## Usage
 
-The following example shows how to use the module to create an Azure Service Bus namespace.
-
-```terraform
-module "servicebus-namespace" {
-  source              = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
-  name                = "${var.product}-${var.component}"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = var.location
-  env                 = var.env
-  common_tags         = var.common_tags
-}
-```
-
 This example shows you how to deploy a Premium SKU Azure Service Bus with a Private Endpoint, giving it a private IP. The Private Endpoint will be attached to one of the default subnets automatically, if you need to override the default subnet ID you can with the `subnet_id` input.
 
 ```terraform
@@ -32,6 +19,20 @@ module "servicebus-namespace" {
   common_tags             = var.common_tags
   project                 = var.project
   enable_private_endpoint = var.servicebus_enable_private_endpoint
+  zoneRedundant           = true
+}
+```
+
+The following example shows how to use the module to create a Standard SKU Azure Service Bus namespace.
+
+```terraform
+module "servicebus-namespace" {
+  source              = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
+  name                = "${var.product}-${var.component}"
+  resource_group_name = azurerm_resource_group.rg.name
+  location            = var.location
+  env                 = var.env
+  common_tags         = var.common_tags
 }
 ```
 
