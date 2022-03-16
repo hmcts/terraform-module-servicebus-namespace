@@ -1,10 +1,9 @@
 locals {
-  subnet_id = var.subnet_id_override != "" ? var.subnet_id_override : var.subnet_id["${var.project}"]["${var.env}"]
+  subnet_id = var.subnet_id_override != "" ? var.subnet_id_override : var.subnet_id[var.project][var.env]
 }
 
 resource "azurerm_private_endpoint" "this" {
-
-  count = var.enable_private_endpoint ? 0 : 1
+  count = var.enable_private_endpoint ? 1 : 0
 
   name                = "${var.name}-endpoint"
   location            = var.location
@@ -27,7 +26,7 @@ resource "azurerm_private_endpoint" "this" {
 }
 
 resource "azurerm_servicebus_namespace_network_rule_set" "this" {
-  count                         = var.enable_private_endpoint == "" ? 0 : 1
+  count                         = var.enable_private_endpoint ? 1 : 0
   namespace_id                  = azurerm_servicebus_namespace.servicebus_namespace.id
   default_action                = "Allow"
   public_network_access_enabled = var.enable_public_access
