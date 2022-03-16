@@ -20,7 +20,7 @@ module "servicebus-namespace" {
 }
 ```
 
-This example shows you how to deploy a Premium SKU Azure Service Bus with a Private Endpoint, giving it a private IP. The Private Endpoint will be attached to one of the default subnets automatically, if you need to override that subnet ID you can with the `subnet_id` input.
+This example shows you how to deploy a Premium SKU Azure Service Bus with a Private Endpoint, giving it a private IP. The Private Endpoint will be attached to one of the default subnets automatically, if you need to override the default subnet ID you can with the `subnet_id` input.
 
 ```terraform
 module "servicebus-namespace" {
