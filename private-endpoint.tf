@@ -29,7 +29,7 @@ resource "azurerm_private_endpoint" "this" {
   name                = "${var.name}-endpoint"
   location            = var.location
   resource_group_name = var.resource_group_name
-  subnet_id           = local.use_default_subnet_id ? local.default_subnet_ids[var.project][var.env] : local.subnet_id
+  subnet_id           = local.use_default_subnet_id ? local.default_subnet_ids[var.project][var.env] : var.subnet_id
 
   private_service_connection {
     name                           = "${var.name}-endpoint-namespace"
