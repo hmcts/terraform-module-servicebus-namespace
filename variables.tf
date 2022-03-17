@@ -38,7 +38,7 @@ variable "capacity" {
   description = "Specifies the capacity. Defaults to 1 when using Premium SKU."
 }
 
-variable "zoneRedundant" {
+variable "zone_redundant" {
   type        = bool
   default     = false
   description = "Whether or not this resource is zone redundant (true or false)"
