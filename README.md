@@ -17,7 +17,7 @@ module "servicebus-namespace" {
   location                = var.location
   env                     = var.env
   common_tags             = var.common_tags
-  project                 = var.project
+  project                 = var.project # cft or sds
   enable_private_endpoint = var.servicebus_enable_private_endpoint
   zoneRedundant           = true
 }
