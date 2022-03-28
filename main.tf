@@ -15,9 +15,8 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
 }
 
 resource "azurerm_servicebus_namespace_authorization_rule" "send_listen_auth_rule" {
-  name                = local.auth_rule_name
-  namespace_name      = azurerm_servicebus_namespace.servicebus_namespace.name
-  resource_group_name = var.resource_group_name
+  name         = local.auth_rule_name
+  namespace_id = azurerm_servicebus_namespace.servicebus_namespace.id
 
   listen = true
   send   = true
