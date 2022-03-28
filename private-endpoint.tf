@@ -3,13 +3,13 @@ locals {
 
   default_subnet_ids = {
     cft = {
-      sbox     = "/subscriptions/bf308a5c-0624-4334-8ff8-8dca9fd43783/resourceGroups/core-infra-sandbox/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-sandbox/subnets/core-infra-subnet-0-sandbox"
-      preview  = "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/core-infra-preview/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-preview/subnets/core-infra-subnet-0-preview"
-      perftest = "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/core-infra-perftest/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-perftest/subnets/core-infra-subnet-0-perftest"
-      ithc     = "/subscriptions/7a4e3bd5-ae3a-4d0c-b441-2188fee3ff1c/resourceGroups/core-infra-ithc/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-ithc/subnets/core-infra-subnet-0-ithc"
-      demo     = "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/core-infra-demo/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-demo/subnets/core-infra-subnet-0-demo"
-      aat      = "/subscriptions/1c4f0704-a29e-403d-b719-b90c34ef14c9/resourceGroups/core-infra-aat/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-aat/subnets/core-infra-subnet-0-aat"
-      prod     = "/subscriptions/8999dec3-0104-4a27-94ee-6588559729d1/resourceGroups/core-infra-prod/providers/Microsoft.Network/virtualNetworks/core-infra-vnet-prod/subnets/core-infra-subnet-0-prod"
+      sbox     = "/subscriptions/b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb/resourceGroups/cft-sbox-network-rg/providers/Microsoft.Network/virtualNetworks/cft-sbox-vnet/subnets/private-endpoints"
+      preview  = "/subscriptions/8b6ea922-0862-443e-af15-6056e1c9b9a4/resourceGroups/cft-preview-network-rg/providers/Microsoft.Network/virtualNetworks/cft-preview-vnet/subnets/private-endpoints"
+      perftest = "/subscriptions/8a07fdcd-6abd-48b3-ad88-ff737a4b9e3c/resourceGroups/cft-perftest-network-rg/providers/Microsoft.Network/virtualNetworks/cft-perftest-vnet/subnets/private-endpoints"
+      ithc     = "/subscriptions/62864d44-5da9-4ae9-89e7-0cf33942fa09/resourceGroups/cft-ithc-network-rg/providers/Microsoft.Network/virtualNetworks/cft-ithc-vnet/subnets/private-endpoints"
+      demo     = "/subscriptions/d025fece-ce99-4df2-b7a9-b649d3ff2060/resourceGroups/cft-demo-network-rg/providers/Microsoft.Network/virtualNetworks/cft-demo-vnet/subnets/private-endpoints"
+      aat      = "/subscriptions/96c274ce-846d-4e48-89a7-d528432298a7/resourceGroups/cft-aat-network-rg/providers/Microsoft.Network/virtualNetworks/cft-aat-vnet/subnets/private-endpoints"
+      prod     = "/subscriptions/8cbc6f36-7c56-4963-9d36-739db5d00b27/resourceGroups/cft-prod-network-rg/providers/Microsoft.Network/virtualNetworks/cft-prod-vnet/subnets/private-endpoints"
     }
     sds = {
       sbox = "/subscriptions/a8140a9e-f1b0-481f-a4de-09e2ee23f7ab/resourceGroups/ss-sbox-network-rg/providers/Microsoft.Network/virtualNetworks/ss-sbox-vnet/subnets/private-endpoints"
