@@ -3,6 +3,11 @@ variable "location" {
   default = "UK South"
 }
 
+variable "name" {
+  type        = string
+  description = "Unique Azure Service Bus namespace"
+}
+
 variable "project" {
   default     = ""
   description = "Project name (required for Premium SKU) - sds or cft. "
