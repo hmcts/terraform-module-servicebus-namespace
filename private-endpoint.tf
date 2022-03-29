@@ -1,6 +1,5 @@
 locals {
   use_default_subnet_id = var.subnet_id == "" ? true : false
-  provider              = var.project == "sds" ? azurerm : azurerm.private-endpoint-subnet
 }
 
 data "azurerm_subnet" "private-endpoints" {
