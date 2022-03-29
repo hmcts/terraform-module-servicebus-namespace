@@ -1,13 +1,15 @@
 locals {
-  use_default_subnet_id = var.subnet_id == "" ? true : false
+  use_default_subnet_id      = var.subnet_id == "" ? true : false
+  private_endpoint_rg_name   = var.project == "sds" ? "ss-${var.env}-network-rg" : "${var.project}-${var.env}-network-rg"
+  private_endpoint_vnet_name = var.project == "sds" ? "ss-${var.env}-vnet" : "${var.project}-${var.env}-vnet"
 }
 
 data "azurerm_subnet" "private-endpoints" {
   count    = var.enable_private_endpoint && local.use_default_subnet_id ? 1 : 0
   provider = azurerm.private-endpoint-subnet
 
-  resource_group_name  = var.project == "sds" ? "ss-${var.env}-network-rg" : "${var.project}-${var.env}-network-rg"
-  virtual_network_name = var.project == "sds" ? "ss-${var.env}-vnet" : "${var.project}-${var.env}-vnet"
+  resource_group_name  = local.private_endpoint_rg_name
+  virtual_network_name = local.private_endpoint_vnet_name
   name                 = "private-endpoints"
 }
 
@@ -17,7 +19,7 @@ resource "azurerm_private_endpoint" "this" {
 
   name                = "${var.name}-endpoint"
   location            = var.location
-  resource_group_name = var.project == "sds" ? "ss-${var.env}-network-rg" : "${var.project}-${var.env}-network-rg"
+  resource_group_name = local.private_endpoint_rg_name
   subnet_id           = local.use_default_subnet_id ? data.azurerm_subnet.private-endpoints[0].id : var.subnet_id
 
   private_service_connection {
