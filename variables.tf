@@ -4,13 +4,17 @@ variable "location" {
 }
 
 variable "project" {
-  default     = ""
+  default     = "cft"
   description = "Project name (required for Premium SKU) - sds or cft. "
 }
 
-variable "name" {
-  type        = string
-  description = "Unique Azure Service Bus namespace"
+variable "aks_subscription_id" {
+  default     = ""
+  description = <<-EOT
+  Subscription ID of the subnet that the private endpoint will be created in. 
+   - Only needed when creating a Service Bus with a Private Endpoint enabled and the Subscription ID 
+   - Jenkins provides this value by default
+EOT
 }
 
 variable "resource_group_name" {
@@ -19,7 +23,8 @@ variable "resource_group_name" {
 }
 
 variable "env" {
-  type = string
+  type    = string
+  default = "value"
 }
 
 variable "common_tags" {
