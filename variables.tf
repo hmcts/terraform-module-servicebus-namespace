@@ -4,15 +4,16 @@ variable "location" {
 }
 
 variable "project" {
-  default     = "cft"
+  default     = ""
   description = "Project name (required for Premium SKU) - sds or cft. "
 }
 
 variable "aks_subscription_id" {
   default     = ""
   description = <<-EOT
-  Subscription ID of the subnet that the private endpoint will be created in. 
-   - Only needed when creating a Service Bus with a Private Endpoint enabled and the Subscription ID 
+  Subscription ID of the subnet that the private endpoint will be created in.  
+   - Only needed when creating a Service Bus with a Private Endpoint enabled and when the 
+     Subscription differs between the target subnet and the target Service Bus.
    - Jenkins provides this value by default
 EOT
 }
@@ -23,8 +24,7 @@ variable "resource_group_name" {
 }
 
 variable "env" {
-  type    = string
-  default = "value"
+  type = string
 }
 
 variable "common_tags" {
