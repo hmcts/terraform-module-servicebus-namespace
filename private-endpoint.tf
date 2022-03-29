@@ -17,7 +17,7 @@ resource "azurerm_private_endpoint" "this" {
 
   name                = "${var.name}-endpoint"
   location            = var.location
-  resource_group_name = var.resource_group_name
+  resource_group_name = var.project == "sds" ? "ss-${var.env}-network-rg" : "${var.project}-${var.env}-network-rg"
   subnet_id           = local.use_default_subnet_id ? data.azurerm_subnet.private-endpoints[0].id : var.subnet_id
 
   private_service_connection {
