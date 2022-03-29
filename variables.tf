@@ -23,6 +23,12 @@ variable "aks_subscription_id" {
 EOT
 }
 
+
+variable "subscription_id" {
+  default     = ""
+  description = "Subscription ID of the subnet that the private endpoint will be created in"
+}
+
 variable "resource_group_name" {
   type        = string
   description = "Resource group in which the Service Bus namespace should exist"
