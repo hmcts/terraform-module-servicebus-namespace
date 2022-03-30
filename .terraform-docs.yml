@@ -1,12 +1,18 @@
 formatter: "markdown table"
 
 sections:
-  show: ["inputs","outputs"]
+  show: 
+    - requirements
+    - inputs 
+    - outputs
 
 output:
   file: README.md
   mode: inject
-  template: |-
+  template: |
     <!-- BEGIN_TF_DOCS -->
     {{ .Content }}
-    <!-- END_TF_DOCS -->  
+    <!-- END_TF_DOCS -->
+
+settings:
+  hide-empty: true
