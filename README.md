@@ -39,6 +39,12 @@ module "servicebus-namespace" {
 <!-- BEGIN_TF_DOCS -->
 
 
+## Resources
+
+| Name | Type |
+|------|------|
+| [azurerm_subnet.private-endpoints](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/data-sources/subnet) | data source |
+
 ## Inputs
 
 | Name | Description | Type | Default | Required |
