@@ -11,8 +11,6 @@ output:
   mode: inject
   template: |
     <!-- BEGIN_TF_DOCS -->
-    '{{ .Content }}'
-    "{{ .Content }}"
     <!-- END_TF_DOCS -->
 
 settings:
