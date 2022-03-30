@@ -6,7 +6,7 @@ locals {
 
 data "azurerm_subnet" "private-endpoints" {
   count    = var.enable_private_endpoint && local.use_default_subnet_id ? 1 : 0
-  provider = azurerm.private-endpoint-subnet
+  provider = azurerm.private-endpoint
 
   resource_group_name  = local.private_endpoint_rg_name
   virtual_network_name = local.private_endpoint_vnet_name
@@ -15,7 +15,7 @@ data "azurerm_subnet" "private-endpoints" {
 
 resource "azurerm_private_endpoint" "this" {
   count    = var.enable_private_endpoint ? 1 : 0
-  provider = azurerm.private-endpoint-subnet
+  provider = azurerm.private-endpoint
 
   name                = "${var.name}-endpoint"
   location            = var.location
