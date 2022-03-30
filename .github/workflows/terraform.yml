@@ -30,7 +30,7 @@ jobs:
           }
           provider "azurerm" {
             features {}
-            alias                      = "private-endpoint"
+            alias = "private-endpoint"
           }
           EOF
       - name: Terraform Init
