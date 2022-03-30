@@ -5,7 +5,6 @@ formatter: "markdown table"
 sections:
   show: 
     - requirements
-    - data-sources
     - inputs 
     - outputs
 
