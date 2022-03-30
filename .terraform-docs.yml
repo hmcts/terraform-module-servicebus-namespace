@@ -1,8 +1,11 @@
+# https://terraform-docs.io/user-guide/configuration/
+
 formatter: "markdown table"
 
 sections:
   show: 
     - requirements
+    - data-sources
     - inputs 
     - outputs
 
