@@ -3,6 +3,7 @@ formatter: "markdown table"
 sections:
   show: 
     - requirements
+    - providers
     - inputs 
     - outputs
 
