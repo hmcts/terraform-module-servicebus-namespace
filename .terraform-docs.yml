@@ -1,0 +1,15 @@
+# https://terraform-docs.io/user-guide/configuration/
+
+formatter: "markdown table"
+
+sections:
+  show: 
+    - requirements
+    - inputs 
+    - outputs
+
+output:
+  file: README.md
+
+settings:
+  hide-empty: true
