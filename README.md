@@ -39,13 +39,6 @@ module "servicebus-namespace" {
 <!-- BEGIN_TF_DOCS -->
 
 
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | n/a |
-| <a name="provider_azurerm.private-endpoint-subnet"></a> [azurerm.private-endpoint-subnet](#provider\_azurerm.private-endpoint-subnet) | n/a |
-
 ## Inputs
 
 | Name | Description | Type | Default | Required |
