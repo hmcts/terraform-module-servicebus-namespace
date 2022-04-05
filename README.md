@@ -37,7 +37,11 @@ module "servicebus-namespace" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
+## Requirements
 
+| Name | Version |
+|------|---------|
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 2.0.0 |
 
 ## Inputs
 
