@@ -59,9 +59,3 @@ variable "subnet_id" {
   default     = ""
   description = "Subnet ID to attach private endpoint to - overrides the default subnet id"
 }
-
-
-variable "private_endpoint_subscription_id" {
-  default     = ""
-  description = "Subscription ID of the subnet that the private endpoint will be created in. Only needed when creating a Service Bus with a Private Endpoint enabled and when the Subscription differs between the Service Bus and the target subnet."
-}
