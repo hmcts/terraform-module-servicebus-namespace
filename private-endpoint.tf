@@ -5,23 +5,23 @@ locals {
   network_env                = var.project == "cft" && var.env == "sbox" ? "preview" : var.env 
 }
 
-data "azurerm_subnet" "private-endpoints" {
+data "azurerm_subnet" "private_endpoints" {
   count    = var.enable_private_endpoint && local.use_default_subnet_id ? 1 : 0
   provider = azurerm.private_endpoint
 
   resource_group_name  = local.private_endpoint_rg_name
   virtual_network_name = local.private_endpoint_vnet_name
-  name                 = "private-endpoints"
+  name                 = "private_endpoints"
 }
 
 resource "azurerm_private_endpoint" "this" {
   count    = var.enable_private_endpoint ? 1 : 0
-  provider = azurerm.private-endpoint
+  provider = azurerm.private_endpoint
 
   name                = "${var.name}-endpoint"
   location            = var.location
   resource_group_name = local.private_endpoint_rg_name
-  subnet_id           = local.use_default_subnet_id ? data.azurerm_subnet.private-endpoints[0].id : var.subnet_id
+  subnet_id           = local.use_default_subnet_id ? data.azurerm_subnet.private_endpoints[0].id : var.subnet_id
 
   private_service_connection {
     name                           = "${var.name}-endpoint-namespace"
