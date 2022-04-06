@@ -1,12 +1,13 @@
 locals {
   use_default_subnet_id      = var.subnet_id == "" ? true : false
-  private_endpoint_rg_name   = var.project == "sds" ? "ss-${var.env}-network-rg" : "${var.project}-${var.env}-network-rg"
-  private_endpoint_vnet_name = var.project == "sds" ? "ss-${var.env}-vnet" : "${var.project}-${var.env}-vnet"
+  private_endpoint_rg_name   = var.project == "sds" ? "ss-${local.network_env}-network-rg" : "${var.project}-${local.network_env}-network-rg"
+  private_endpoint_vnet_name = var.project == "sds" ? "ss-${local.network_env}-vnet" : "${var.project}-${local.network_env}-vnet"
+  network_env                = var.project == "cft" && var.env == "sbox" ? "preview" : var.env 
 }
 
 data "azurerm_subnet" "private-endpoints" {
   count    = var.enable_private_endpoint && local.use_default_subnet_id ? 1 : 0
-  provider = azurerm.private-endpoint
+  provider = azurerm.private_endpoint
 
   resource_group_name  = local.private_endpoint_rg_name
   virtual_network_name = local.private_endpoint_vnet_name
