@@ -2,7 +2,7 @@ locals {
   use_default_subnet_id      = var.subnet_id == "" ? true : false
   private_endpoint_rg_name   = var.project == "sds" ? "ss-${local.network_env}-network-rg" : "${var.project}-${local.network_env}-network-rg"
   private_endpoint_vnet_name = var.project == "sds" ? "ss-${local.network_env}-vnet" : "${var.project}-${local.network_env}-vnet"
-  network_env                = var.project == "cft" && var.env == "sbox" ? "preview" : var.env 
+  network_env                = var.project == "cft" && var.env == "sandbox" ? "preview" : var.env 
 }
 
 data "azurerm_subnet" "private_endpoints" {
@@ -11,7 +11,7 @@ data "azurerm_subnet" "private_endpoints" {
 
   resource_group_name  = local.private_endpoint_rg_name
   virtual_network_name = local.private_endpoint_vnet_name
-  name                 = "private_endpoints"
+  name                 = "private-endpoints"
 }
 
 resource "azurerm_private_endpoint" "this" {
