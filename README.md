@@ -37,7 +37,11 @@ module "servicebus-namespace" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
+## Requirements
 
+| Name | Version |
+|------|---------|
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0.0 |
 
 ## Inputs
 
@@ -50,7 +54,6 @@ module "servicebus-namespace" {
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"UK South"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Unique Azure Service Bus namespace | `string` | n/a | yes |
-| <a name="input_private_endpoint_subscription_id"></a> [private\_endpoint\_subscription\_id](#input\_private\_endpoint\_subscription\_id) | Subscription ID of the subnet that the private endpoint will be created in. Only needed when creating a Service Bus with a Private Endpoint enabled and when the Subscription differs between the Service Bus and the target subnet. | `string` | `""` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project name (required for Premium SKU) - sds or cft. | `string` | `""` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group in which the Service Bus namespace should exist | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | SKU type (Basic, Standard and Premium) | `string` | `"Standard"` | no |
