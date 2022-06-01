@@ -27,6 +27,6 @@ output "sku" {
   value = var.sku
 }
 
-output "servicebus_namespace_id" {
+output "id" {
   value = azurerm_servicebus_namespace.servicebus_namespace.id
 }
