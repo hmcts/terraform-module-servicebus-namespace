@@ -26,3 +26,7 @@ output "secondary_send_and_listen_shared_access_key" {
 output "sku" {
   value = var.sku
 }
+
+output "servicebus_namespace_id" {
+  value = azurerm_servicebus_namespace.servicebus_namespace.id
+}
