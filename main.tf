@@ -1,6 +1,6 @@
 locals {
   auth_rule_name = "SendAndListenSharedAccessKey"
-  sku            = "${var.enable_private_endpoint}" == true ? "Premium" : "${var.sku}"
+  sku            = "Standard"
   capacity       = "${local.sku}" == "Premium" && "${var.capacity}" <= 0 ? 1 : "${var.capacity}"
 }
 
