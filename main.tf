@@ -1,7 +1,7 @@
 locals {
   auth_rule_name = "SendAndListenSharedAccessKey"
-  sku            = "Standard"
-  capacity       = "${local.sku}" == "Premium" && "${var.capacity}" <= 0 ? 1 : "${var.capacity}"
+  sku            = "${var.sku}"
+  capacity       = "${var.capacity}"
 }
 
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
