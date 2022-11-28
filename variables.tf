@@ -1,5 +1,5 @@
 variable "location" {
-  type    = string
+  type    = "string"
   default = "UK South"
 }
 
@@ -9,43 +9,43 @@ variable "project" {
 }
 
 variable "name" {
-  type        = string
+  type        = "string"
   description = "Unique Azure Service Bus namespace"
 }
 
 variable "resource_group_name" {
-  type        = string
+  type        = "string"
   description = "Resource group in which the Service Bus namespace should exist"
 }
 
 variable "env" {
-  type = string
+  type = "string"
 }
 
 variable "common_tags" {
-  type = map(string)
+  type = "map"
 }
 
 variable "sku" {
-  type        = string
+  type        = "string"
   default     = "Standard"
   description = "SKU type (Basic, Standard and Premium)"
 }
 
 variable "capacity" {
-  type        = number
+  type        = "number"
   default     = 0
   description = "Specifies the capacity. Defaults to 1 when using Premium SKU."
 }
 
 variable "zone_redundant" {
-  type        = bool
+  type        = "bool"
   default     = false
   description = "Whether or not this resource is zone redundant (true or false)"
 }
 
 variable "enable_public_access" {
-  type        = bool
+  type        = "bool"
   default     = false
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
 }
