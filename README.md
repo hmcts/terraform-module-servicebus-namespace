@@ -7,10 +7,30 @@ Refer to the following link for a detailed explanation of the Azure Service Bus 
 
 ## Usage
 
-This example shows you how to deploy a Premium SKU Azure Service Bus with a Private Endpoint, giving it a private IP. The Private Endpoint will be attached to one of the default subnets automatically, if you need to override the default subnet ID you can with the `subnet_id` input.
+### Recommended example for cost optimisation
 
+Premium service bus namespaces are very expensive, care **must** be taken when using them and only used in required environments.
+
+variables.tf
 ```terraform
-module "servicebus-namespace" {
+variable "service_bus_zone_redundant" {
+  default = false
+}
+
+variable "service_bus_sku" {
+  default = "Standard"
+}
+```
+
+prod.tfvars
+```
+service_bus_zone_redundant = true
+service_bus_sku = "Premium"
+```
+
+service-bus.tf
+```terraform
+module "servicebus_namespace" {
   source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
   name                    = "${var.product}-${var.component}"
   resource_group_name     = azurerm_resource_group.shared_resource_group.name
@@ -18,21 +38,34 @@ module "servicebus-namespace" {
   env                     = var.env
   common_tags             = var.common_tags
   project                 = var.project # cft or sds
-  enable_private_endpoint = var.servicebus_enable_private_endpoint
-  zone_redundant           = true
+  sku                     = var.service_bus_sku
+  zone_redundant          = var.service_bus_zone_redundant
 }
 ```
 
-The following example shows how to use the module to create a Standard SKU Azure Service Bus namespace.
+### Private endpoint
 
+This module does support accessing privately but private endpoint is currently only supported in premium namespaces which are incredibly expensive, (~£500 per month instead of £7).
+Only use this if you have to and minimise the environments you use it in.
+
+variables.tf
 ```terraform
-module "servicebus-namespace" {
-  source              = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
-  name                = "${var.product}-${var.component}"
-  resource_group_name = azurerm_resource_group.rg.name
-  location            = var.location
-  env                 = var.env
-  common_tags         = var.common_tags
+variable "servicebus_enable_private_endpoint" {
+  default = false
+}
+```
+
+prod.tfvars
+```
+servicebus_enable_private_endpoint = true
+```
+
+service-bus.tf
+```terraform
+module "servicebus_namespace" {
+  source                  = "git@github.com:hmcts/terraform-module-servicebus-namespace?ref=master"
+  ...
+  enable_private_endpoint = var.servicebus_enable_private_endpoint
 }
 ```
 
