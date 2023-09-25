@@ -10,6 +10,7 @@ Refer to the following link for a detailed explanation of the Azure Service Bus 
 ### Recommended example for cost optimisation
 
 Premium service bus namespaces are very expensive, care **must** be taken when using them and only used in required environments.
+This should only be production unless you **really** need it in a different environment.
 
 variables.tf
 ```terraform
