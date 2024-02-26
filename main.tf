@@ -1,8 +1,8 @@
 locals {
   auth_rule_name               = "SendAndListenSharedAccessKey"
   sku                          = var.enable_private_endpoint == true ? "Premium" : var.sku
-  capacity                     = local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
-  premium_messaging_partitions = local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
+  capacity                     = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
+  premium_messaging_partitions = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
 }
 
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
