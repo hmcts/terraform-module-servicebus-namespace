@@ -63,5 +63,5 @@ variable "subnet_id" {
 variable "premium_messaging_partitions" {
   type        = number
   default     = 0
-  description = "Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options for Premium SKU are (1, 2, 4)."
+  description = "Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options when using Premium SKU are (1, 2, 4)."
 }
