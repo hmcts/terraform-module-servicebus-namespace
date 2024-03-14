@@ -14,6 +14,11 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   tags                         = var.common_tags
   capacity                     = local.capacity
   premium_messaging_partitions = local.premium_messaging_partitions
+
+  network_rule_set {
+    default_action                = "Allow"
+    public_network_access_enabled = var.enable_public_access
+  }
 }
 
 resource "azurerm_servicebus_namespace_authorization_rule" "send_listen_auth_rule" {

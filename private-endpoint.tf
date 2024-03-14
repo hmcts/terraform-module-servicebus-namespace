@@ -37,11 +37,3 @@ resource "azurerm_private_endpoint" "this" {
 
   tags = var.common_tags
 }
-
-resource "azurerm_servicebus_namespace_network_rule_set" "this" {
-  count                         = var.enable_private_endpoint ? 1 : 0
-  namespace_id                  = azurerm_servicebus_namespace.servicebus_namespace.id
-  default_action                = "Allow"
-  public_network_access_enabled = var.enable_public_access
-
-}
