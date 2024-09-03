@@ -10,10 +10,16 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   location                     = var.location
   resource_group_name          = var.resource_group_name
   sku                          = local.sku
-  zone_redundant               = var.zone_redundant
   tags                         = var.common_tags
   capacity                     = local.capacity
   premium_messaging_partitions = local.premium_messaging_partitions
+  minimum_tls_version          = var.minimum_tls_version
+  public_network_access_enabled = var.enable_public_access
+
+  network_rule_set {
+    default_action                = "Allow"
+    public_network_access_enabled = var.enable_public_access
+  }
 }
 
 resource "azurerm_servicebus_namespace_authorization_rule" "send_listen_auth_rule" {

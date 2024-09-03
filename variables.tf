@@ -38,16 +38,16 @@ variable "capacity" {
   description = "Specifies the capacity. Defaults to 1 when using Premium SKU."
 }
 
-variable "zone_redundant" {
-  type        = bool
-  default     = false
-  description = "Whether or not this resource is zone redundant (true or false)"
-}
-
 variable "enable_public_access" {
   type        = bool
   default     = false
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
+}
+
+variable "minimum_tls_version" {
+  type        = string
+  default     = "1.2"
+  description = "Specifies the minimum TLS version"
 }
 
 variable "enable_private_endpoint" {

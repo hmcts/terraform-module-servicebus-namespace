@@ -40,7 +40,6 @@ module "servicebus_namespace" {
   common_tags             = var.common_tags
   project                 = var.project # cft or sds
   sku                     = var.service_bus_sku
-  zone_redundant          = var.service_bus_zone_redundant
 }
 ```
 
@@ -87,13 +86,13 @@ module "servicebus_namespace" {
 | <a name="input_enable_public_access"></a> [enable\_public\_access](#input\_enable\_public\_access) | Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection) | `bool` | `false` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"UK South"` | no |
+| <a name="input_minimum_tls_version"></a> [minimum\_tls\_version](#input\_minimum\_tls\_version) | Specifies the minimum TLS version | `string` | `"1.2"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Unique Azure Service Bus namespace | `string` | n/a | yes |
 | <a name="input_premium_messaging_partitions"></a> [premium\_messaging\_partitions](#input\_premium\_messaging\_partitions) | Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options when using Premium SKU are (1, 2, 4). | `number` | `0` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project name (required for Premium SKU) - sds or cft. | `string` | `""` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group in which the Service Bus namespace should exist | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | SKU type (Basic, Standard and Premium) | `string` | `"Standard"` | no |
 | <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Subnet ID to attach private endpoint to - overrides the default subnet id | `string` | `""` | no |
-| <a name="input_zone_redundant"></a> [zone\_redundant](#input\_zone\_redundant) | Whether or not this resource is zone redundant (true or false) | `bool` | `false` | no |
 
 ## Outputs
 
