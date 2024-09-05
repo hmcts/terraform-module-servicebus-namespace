@@ -59,3 +59,9 @@ variable "premium_messaging_partitions" {
   default     = 0
   description = "Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options when using Premium SKU are (1, 2, 4)."
 }
+
+variable "minimum_tls_version" {
+  type        = number
+  default     = 1.2
+  description = "The minimum supported TLS version for this Service Bus Namespace. Valid values are: 1.0, 1.1 and 1.2."
+}

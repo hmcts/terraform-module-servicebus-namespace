@@ -13,6 +13,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   tags                         = var.common_tags
   capacity                     = local.capacity
   premium_messaging_partitions = local.premium_messaging_partitions
+  minimum_tls_version          = var.minimum_tls_version
   dynamic "network_rule_set" {
     for_each = var.enable_private_endpoint ? [1] : []
     content {
