@@ -65,12 +65,11 @@ module "servicebus_namespace" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
-## Providers
+## Requirements
 
 | Name | Version |
 |------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.0.0 |
-| <a name="provider_azurerm.private_endpoint"></a> [azurerm.private\_endpoint](#provider\_azurerm.private\_endpoint) | >= 3.0.0 |
+| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0.0 |
 
 ## Inputs
 
