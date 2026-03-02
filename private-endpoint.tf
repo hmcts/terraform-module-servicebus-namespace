@@ -1,6 +1,7 @@
 locals {
   use_default_subnet_id      = var.subnet_id == "" ? true : false
-  private_endpoint_rg_name   = var.project == "sds" ? "ss-${local.network_env}-network-rg" : "${var.project}-${local.network_env}-network-rg"
+  default_pe_rg_name        = var.project == "sds" ? "ss-${local.network_env}-network-rg" : "${var.project}-${local.network_env}-network-rg"
+  private_endpoint_rg_name  = var.private_endpoint_resource_group_name != "" ? var.private_endpoint_resource_group_name : local.default_pe_rg_name
   private_endpoint_vnet_name = var.project == "sds" ? "ss-${local.network_env}-vnet" : "${var.project}-${local.network_env}-vnet"
   network_env                = var.env == "sandbox" ? "preview" : var.env
 }

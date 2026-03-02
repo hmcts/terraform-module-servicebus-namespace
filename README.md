@@ -65,11 +65,12 @@ module "servicebus_namespace" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
-## Requirements
+## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | >= 3.0.0 |
+| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | >= 3.0.0 |
+| <a name="provider_azurerm.private_endpoint"></a> [azurerm.private\_endpoint](#provider\_azurerm.private\_endpoint) | >= 3.0.0 |
 
 ## Inputs
 
@@ -83,6 +84,7 @@ module "servicebus_namespace" {
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"UK South"` | no |
 | <a name="input_name"></a> [name](#input\_name) | Unique Azure Service Bus namespace | `string` | n/a | yes |
 | <a name="input_premium_messaging_partitions"></a> [premium\_messaging\_partitions](#input\_premium\_messaging\_partitions) | Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options when using Premium SKU are (1, 2, 4). | `number` | `0` | no |
+| <a name="input_private_endpoint_resource_group_name"></a> [private\_endpoint\_resource\_group\_name](#input\_private\_endpoint\_resource\_group\_name) | Resource group in which to create the private endpoint. When non-empty, overrides the default (project-env-network-rg). Use the same RG as the namespace or the subnet when it does not exist. | `string` | `""` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project name (required for Premium SKU) - sds or cft. | `string` | `""` | no |
 | <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | Resource group in which the Service Bus namespace should exist | `string` | n/a | yes |
 | <a name="input_sku"></a> [sku](#input\_sku) | SKU type (Basic, Standard and Premium) | `string` | `"Standard"` | no |
@@ -94,6 +96,8 @@ module "servicebus_namespace" {
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | n/a |
 | <a name="output_name"></a> [name](#output\_name) | n/a |
+| <a name="output_namespace_id"></a> [namespace\_id](#output\_namespace\_id) | Alias for orchestration consistency (namespace\_id, namespace\_name) |
+| <a name="output_namespace_name"></a> [namespace\_name](#output\_namespace\_name) | n/a |
 | <a name="output_primary_send_and_listen_connection_string"></a> [primary\_send\_and\_listen\_connection\_string](#output\_primary\_send\_and\_listen\_connection\_string) | primary connection string for send and listen operations |
 | <a name="output_primary_send_and_listen_shared_access_key"></a> [primary\_send\_and\_listen\_shared\_access\_key](#output\_primary\_send\_and\_listen\_shared\_access\_key) | primary shared access key with send and listen rights |
 | <a name="output_secondary_send_and_listen_connection_string"></a> [secondary\_send\_and\_listen\_connection\_string](#output\_secondary\_send\_and\_listen\_connection\_string) | secondary connection string for send and listen operations |

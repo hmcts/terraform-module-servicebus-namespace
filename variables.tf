@@ -54,6 +54,12 @@ variable "subnet_id" {
   description = "Subnet ID to attach private endpoint to - overrides the default subnet id"
 }
 
+variable "private_endpoint_resource_group_name" {
+  type        = string
+  default     = ""
+  description = "Resource group in which to create the private endpoint. When non-empty, overrides the default (project-env-network-rg). Use the same RG as the namespace or the subnet when it does not exist."
+}
+
 variable "premium_messaging_partitions" {
   type        = number
   default     = 0

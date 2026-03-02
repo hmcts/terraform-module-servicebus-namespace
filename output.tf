@@ -30,3 +30,12 @@ output "sku" {
 output "id" {
   value = azurerm_servicebus_namespace.servicebus_namespace.id
 }
+
+# Alias for orchestration consistency (namespace_id, namespace_name)
+output "namespace_id" {
+  value = azurerm_servicebus_namespace.servicebus_namespace.id
+}
+
+output "namespace_name" {
+  value = azurerm_servicebus_namespace.servicebus_namespace.name
+}
