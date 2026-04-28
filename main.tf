@@ -3,6 +3,7 @@ locals {
   sku                          = var.enable_private_endpoint == true ? "Premium" : var.sku
   capacity                     = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
   premium_messaging_partitions = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
+  enable_public_access         = var.enable_private_endpoint == true ? false : true
 }
 
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
@@ -17,7 +18,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
     for_each = var.enable_private_endpoint ? [1] : []
     content {
       default_action = "Allow"
-      public_network_access_enabled = var.enable_public_access
+      public_network_access_enabled = local.enable_public_access
     }
   }
 }
