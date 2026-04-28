@@ -6,17 +6,18 @@ locals {
 }
 
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
-  name                         = var.name
-  location                     = var.location
-  resource_group_name          = var.resource_group_name
-  sku                          = local.sku
-  tags                         = var.common_tags
-  capacity                     = local.capacity
-  premium_messaging_partitions = local.premium_messaging_partitions
+  name                          = var.name
+  location                      = var.location
+  resource_group_name           = var.resource_group_name
+  sku                           = local.sku
+  tags                          = var.common_tags
+  capacity                      = local.capacity
+  premium_messaging_partitions  = local.premium_messaging_partitions
+  public_network_access_enabled = var.enable_public_access
   dynamic "network_rule_set" {
     for_each = var.enable_private_endpoint ? [1] : []
     content {
-      default_action = "Allow"
+      default_action                = "Allow"
       public_network_access_enabled = var.enable_public_access
     }
   }
