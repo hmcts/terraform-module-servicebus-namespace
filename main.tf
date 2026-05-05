@@ -1,7 +1,7 @@
 locals {
   auth_rule_name               = "SendAndListenSharedAccessKey"
   sku                          = var.enable_private_endpoint == true ? "Premium" : var.sku
-  enable_private_access        = var.enable_private_endpoint == true && var.enable_private_access == true ? true : var.enable_private_access
+  enable_private_access        = (var.enable_private_endpoint == true && var.enable_private_access == true) ? true : var.enable_private_access
   capacity                     = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
   premium_messaging_partitions = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
 }
