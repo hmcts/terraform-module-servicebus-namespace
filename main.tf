@@ -1,9 +1,8 @@
 locals {
-  auth_rule_name                = "SendAndListenSharedAccessKey"
-  sku                           = var.enable_private_endpoint == true ? "Premium" : var.sku
-  enable_public_access          = var.enable_private_endpoint == true ? false : var.enable_public_access 
-  capacity                      = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
-  premium_messaging_partitions  = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
+  auth_rule_name               = "SendAndListenSharedAccessKey"
+  sku                          = var.enable_private_endpoint == true ? "Premium" : var.sku
+  capacity                     = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.capacity <= 0 ? 1 : var.capacity
+  premium_messaging_partitions = local.sku != "Premium" ? 0 : local.sku == "Premium" && var.premium_messaging_partitions <= 0 ? 1 : var.premium_messaging_partitions
 }
 
 resource "azurerm_servicebus_namespace" "servicebus_namespace" {
@@ -14,7 +13,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
   tags                          = var.common_tags
   capacity                      = local.capacity
   premium_messaging_partitions  = local.premium_messaging_partitions
-  public_network_access_enabled = local.enable_public_access
+  public_network_access_enabled = var.enable_public_access
   dynamic "network_rule_set" {
     for_each = var.enable_private_endpoint ? [1] : []
     content {
