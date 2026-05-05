@@ -40,7 +40,7 @@ variable "capacity" {
 
 variable "enable_public_access" {
   type        = bool
-  default     = false
+  default     = true
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
 }
 
