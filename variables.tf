@@ -40,8 +40,15 @@ variable "capacity" {
 
 variable "enable_public_access" {
   type        = bool
-  default     = true
+  default     = false
   description = "Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection)"
+}
+
+# enable_private_access is separate to enable_public_access to ensure backwards compatibility with existing module calls.
+variable "enable_private_access" {
+  type        = bool
+  default     = false
+  description = "Disable public access in favour of private endpoint only"
 }
 
 variable "enable_private_endpoint" {
