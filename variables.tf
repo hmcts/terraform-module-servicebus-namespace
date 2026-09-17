@@ -60,8 +60,9 @@ variable "managed_identity_object_id" {
 }
 
 variable "managed_identity_resource_id" {
+  type        = list(string)
   description = "(Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account."
-  default     = toset([])
+  default     = []
 }
 
 variable "role_assignments" {
