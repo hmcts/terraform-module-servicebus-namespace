@@ -83,7 +83,7 @@ module "servicebus_namespace" {
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"UK South"` | no |
 | <a name="input_managed_identity_object_id"></a> [managed\_identity\_object\_id](#input\_managed\_identity\_object\_id) | (Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account. | `string` | `""` | no |
-| <a name="input_managed_identity_resource_id"></a> [managed\_identity\_resource\_id](#input\_managed\_identity\_resource\_id) | (Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account. | `string` | `""` | no |
+| <a name="input_managed_identity_resource_id"></a> [managed\_identity\_resource\_id](#input\_managed\_identity\_resource\_id) | (Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account. | `list` | `[]` | no |
 | <a name="input_name"></a> [name](#input\_name) | Unique Azure Service Bus namespace | `string` | n/a | yes |
 | <a name="input_premium_messaging_partitions"></a> [premium\_messaging\_partitions](#input\_premium\_messaging\_partitions) | Specifies the number of messaging partitions. Defaults to 1 when using Premium SKU. Options when using Premium SKU are (1, 2, 4). | `number` | `0` | no |
 | <a name="input_project"></a> [project](#input\_project) | Project name (required for Premium SKU) - sds or cft. | `string` | `""` | no |
