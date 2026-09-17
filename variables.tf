@@ -61,7 +61,7 @@ variable "managed_identity_object_id" {
 
 variable "managed_identity_resource_id" {
   description = "(Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account."
-  default     = ""
+  default     = []
 }
 
 variable "role_assignments" {
