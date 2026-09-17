@@ -80,7 +80,6 @@ module "servicebus_namespace" {
 | <a name="input_enable_managed_identity"></a> [enable\_managed\_identity](#input\_enable\_managed\_identity) | Enable Managed Identity | `bool` | `false` | no |
 | <a name="input_enable_private_endpoint"></a> [enable\_private\_endpoint](#input\_enable\_private\_endpoint) | Enable Private endpoint? Only available with the Premium SKU, if set to true a Premium type Service Bus Namespace will be deployed automatically | `bool` | `false` | no |
 | <a name="input_enable_public_access"></a> [enable\_public\_access](#input\_enable\_public\_access) | Enable public access (should only be enabled for a migration when using the Premium SKU and a private endpoint connection) | `bool` | `true` | no |
-| <a name="input_enable_sas_authentication"></a> [enable\_sas\_authentication](#input\_enable\_sas\_authentication) | Enable SAS Authentication | `bool` | `true` | no |
 | <a name="input_env"></a> [env](#input\_env) | n/a | `string` | n/a | yes |
 | <a name="input_location"></a> [location](#input\_location) | n/a | `string` | `"UK South"` | no |
 | <a name="input_managed_identity_object_id"></a> [managed\_identity\_object\_id](#input\_managed\_identity\_object\_id) | (Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account. | `string` | `""` | no |
