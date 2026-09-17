@@ -49,6 +49,30 @@ variable "enable_private_endpoint" {
   description = "Enable Private endpoint? Only available with the Premium SKU, if set to true a Premium type Service Bus Namespace will be deployed automatically"
 }
 
+variable "enable_managed_identity" {
+  default     = false
+  description = "Enable Managed Identity"
+}
+
+variable "managed_identity_object_id" {
+  description = "(Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account."
+  default     = ""
+}
+
+variable "managed_identity_resource_id" {
+  type        = list(string)
+  description = "(Optional) Object Id for a Managed Identity to assign roles to, scoped to this storage account."
+  default     = []
+}
+
+variable "role_assignments" {
+  type        = list(string)
+  description = "(Optional) List of roles to assign to the provided Managed Identity, scoped to this storage account."
+  default     = []
+}
+
+
+
 variable "subnet_id" {
   default     = ""
   description = "Subnet ID to attach private endpoint to - overrides the default subnet id"
