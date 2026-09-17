@@ -47,7 +47,7 @@ resource "azurerm_servicebus_namespace" "servicebus_namespace" {
 
     content {
       type = "UserAssigned"
-      identity_ids = var.managed_identity_resource_id
+      identity_ids = toset(var.managed_identity_resource_id)
     }
   }
 }
